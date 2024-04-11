@@ -1,5 +1,4 @@
-
-import sys, os
+import sys , os
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLCDNumber

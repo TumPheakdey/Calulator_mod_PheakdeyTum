@@ -1,5 +1,7 @@
 from sly import Lexer
+
 import sly
+
 
 class MyLexer(Lexer):
     """

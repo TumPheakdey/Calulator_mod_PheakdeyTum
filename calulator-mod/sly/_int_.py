@@ -1,5 +1,5 @@
 from pygments import lex
-from .lex import *
+from lex import *
 from .yacc import *
 from .yacc import YaccError
 
