@@ -1,7 +1,5 @@
 from sly import Lexer
-
 import sly
-
 
 class MyLexer(Lexer):
     """
@@ -17,7 +15,7 @@ class MyLexer(Lexer):
     # set `tokens` so it can be used in the parser.
     # This must be here and all Capitalized. 
     # Please, ignore IDE warning.
-    tokens = { N } # type: ignore
+    tokens = { N }
     
     # https://sly.readthedocs.io/en/latest/sly.html#literal-characters
     literals = { '+' , '*' }
@@ -29,7 +27,7 @@ class MyLexer(Lexer):
     # Ignore spaces and tabs 
     ignore = ' \t'
     ### EX2: Define as a function ###
-    @_(r'\d+') # type: ignore
+    @_(r'\d+')
     def N(self, token):
         # Note that this function set parse token.value to integer
         token.value = int(token.value)
@@ -38,7 +36,7 @@ class MyLexer(Lexer):
         return token
 
     # Extra action for newlines
-    @_(r'\n+') # type: ignore
+    @_(r'\n+')
     def ignore_newline(self, t):
         # https://sly.readthedocs.io/en/latest/sly.html#line-numbers-and-position-tracking
         self.lineno += t.value.count('\n')
@@ -50,7 +48,7 @@ class MyLexer(Lexer):
 if __name__ == '__main__':
     # Write a simple test that only run when you execute this file
     string_input:str = "3 + 5 * 2"
-    lex:MyLexer = MyLexer()
+    lex:Lexer = MyLexer()
     # assign type to `token`
     token: sly.lex.Token
     for token in lex.tokenize(string_input):

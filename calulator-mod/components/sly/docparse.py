@@ -53,7 +53,7 @@ class DocParseMeta(type):
             parsedict = parser.parse(lexer.tokenize(clsdict['__doc__']))
             assert isinstance(parsedict, dict), 'Parser must return a dictionary'
             clsdict.update(parsedict)
-        return().__new__(meta, clsname, bases, clsdict)
+        return super().__new__(meta, clsname, bases, clsdict)
 
     @classmethod
     def __init_subclass__(cls):

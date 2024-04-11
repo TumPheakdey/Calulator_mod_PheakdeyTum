@@ -80,7 +80,7 @@ class Token(object):
 class TokenStr(str):
     @staticmethod
     def __new__(cls, value, key=None, remap=None):
-        self = (super).__new__(cls, value)
+        self = super().__new__(cls, value)
         self.key = key
         self.remap = remap
         return self

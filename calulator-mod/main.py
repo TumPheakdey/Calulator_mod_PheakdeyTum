@@ -1,4 +1,4 @@
-import sys , os
+import sys, os
 from PyQt6 import uic
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtWidgets import QMainWindow, QLineEdit, QPushButton, QLCDNumber
@@ -41,8 +41,8 @@ class MainWindow(QMainWindow):
     def push_equal(self):
         print("Calculate")
         lexer = MyLexer()
-        parser = parser()
-        memory = memory()
+        parser = MyParser()
+        memory = Memory()
         input_text = self.input_text.text()
         result = parser.parse(lexer.tokenize(input_text))
         print(type(result))
